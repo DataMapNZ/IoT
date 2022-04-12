@@ -67,126 +67,20 @@ while True:
 
     if checkSum == int(cs) :
     #if cs = Check Sum is good then do the following
-
-      if channel == '1':
+      if channel in ('1', '2', '3', '4', '17', '18', '19', '20', '23'):
         data = float(data)/10
-        client.virtualWrite(1, data, "analog_sensor", "null")
+        client.virtualWrite(int(channel), data, "analog_sensor", "null")
 
-      if channel == '2':
-        data = float(data)/10
-        client.virtualWrite(2, data, "analog_sensor", "null")
-
-      if channel == '3':
-        data = float(data)/10
-        client.virtualWrite(3, data, "analog_sensor", "null")
-
-      if channel == '4':
-        data = float(data)/10
-        client.virtualWrite(4, data, "analog_sensor", "null")
-
-      if channel == '5':
+      elif channel in ('5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '21', '22', '24', '26', '30', '31', '32', '33'):
         data = float(data)/1
-        client.virtualWrite(5, data, "analog_sensor", "null")
-
-      if channel == '6':
-        data = float(data)/1
-        client.virtualWrite(6, data, "analog_sensor", "null")
-
-      if channel == '7':
-        data = float(data)/1
-        client.virtualWrite(7, data, "analog_sensor", "null")
-
-      if channel == '8':
-        data = float(data)/1
-        client.virtualWrite(8, data, "analog_sensor", "null")
-
-      if channel == '9':
-        data = float(data)/1
-        client.virtualWrite(9, data, "analog_sensor", "null")
-
-      if channel == '10':
-        data = float(data)/1
-        client.virtualWrite(10, data, "analog_sensor", "null")
-
-      if channel == '11':
-        data = float(data)/1
-        client.virtualWrite(11, data, "analog_sensor", "null")
-
-      if channel == '12':
-        data = float(data)/1
-        client.virtualWrite(12, data, "analog_sensor", "null")
-
-      if channel == '13':
-        data = float(data)/1
-        client.virtualWrite(13, data, "analog_sensor", "null")
-
-      if channel == '14':
-        data = float(data)/1
-        client.virtualWrite(14, data, "analog_sensor", "null")
-
-      if channel == '15':
-        data = float(data)/1
-        client.virtualWrite(15, data, "analog_sensor", "null")
-
-      if channel == '16':
-        data = float(data)/1
-        client.virtualWrite(16, data, "analog_sensor", "null")
-
-      if channel == '17':
-        data = float(data)/10
-        client.virtualWrite(17, data, "analog_sensor", "null")
-
-      if channel == '18':
-        data = float(data)/10
-        client.virtualWrite(18, data, "analog_sensor", "null")
-
-      if channel == '19':
-        data = float(data)/10
-        client.virtualWrite(19, data, "analog_sensor", "null")
-
-      if channel == '20':
-        data = float(data)/10
-        client.virtualWrite(20, data, "analog_sensor", "null")
-
-      if channel == '21':
-        data = float(data)/1
-        client.virtualWrite(21, data, "analog_sensor", "null")
-
-      if channel == '22':
-        data = float(data)/1
-        client.virtualWrite(22, data, "analog_sensor", "null")
-
-      if channel == '23':
-        data = float(data)/10
-        client.virtualWrite(23, data, "analog_sensor", "null")
-
-      if channel == '24':
-        data = float(data)/1
-        client.virtualWrite(24, data, "analog_sensor", "null")
-
-      if channel == '25':
-        data = float(data)/1
-        #client.virtualWrite(25, data, "analog_sensor", "null")
-
-      if channel == '26':
-        data = float(data)/1
-        client.virtualWrite(26, data, "analog_sensor", "null")
-
-      if channel == '30':
-        data = float(data)/1
-        client.virtualWrite(30, data, "analog_sensor", "null")
-
-      if channel == '31':
-        data = float(data)/1
-        client.virtualWrite(31, data, "analog_sensor", "null")
-
-      if channel == '32':
-        data = float(data)/1
-        client.virtualWrite(32, data, "analog_sensor", "null")
-
-      if channel == '33':
-        data = float(data)/1
-        client.virtualWrite(33, data, "analog_sensor", "null")
+        client.virtualWrite(int(channel), data, "analog_sensor", "null")
+      
+      else:
+        print("Unknown channel")
+      
+      # if channel == '25':
+      #   data = float(data)/1
+      #   client.virtualWrite(25, data, "analog_sensor", "null")
 
   except ValueError:
     qos_bad = qos_bad + 10
